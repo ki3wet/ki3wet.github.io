@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: Blog 
+site_url: https://ki3wet.github.io/mymkdocs
+site_author: ki3wet 
+theme: 
+  name: mkdocs
