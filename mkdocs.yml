@@ -63,13 +63,13 @@
       icon:
         repo: fontawesome/brands/github #右上角图标
     edit_uri: edit/main/docs # 编辑按钮跳转的链接 
-    repo_url: https://github.com/Wcowin/Wcowin.github.io # 右上角点击跳转的链接
-    repo_name: Wcowin.github.io # 右上角的名字
+    repo_url: https://github.com/ki3wet/ki3wet.github.io # 右上角点击跳转的链接
+    repo_name: ki3wet.github.io # 右上角的名字
 
     # [Navigtion]
     nav: #目录
       
-    copyright: Copyright &copy; 2022~2023 Wcowin/All Rights Reserved. # 左下角的版权声明
+    copyright: Copyright &copy; 2024~2025 ki3wet/All Rights Reserved. # 左下角的版权声明
       
 
     extra:
@@ -86,15 +86,13 @@
           lang: zh-TW
       generator: true  #删除页脚显示“使用 MkDocs 材料制造”
       social:
-        - icon: fontawesome/brands/x-twitter 
-          link: https://twitter.com/wcowin_
         - icon: fontawesome/brands/github
-          link: https://github.com/Wcowin
+          link: https://github.com/ki3wet
         
         - icon: fontawesome/regular/envelope
-          link: mailto:<wangkewen821@gmail.com> #联系方式
+          link: mailto:<ki3wet@gmail.com> #联系方式
         - icon: fontawesome/brands/bilibili
-          link: https://space.bilibili.com/1407028951?spm_id_from=333.1007.0.0
+          link: https://space.bilibili.com/12070727
       
       # consent:
       #   title: Cookie consent
@@ -103,35 +101,18 @@
       #     如果你同意,你可以帮助我们让我们的网站更好
 
         
-
     plugins:
-      # - glightbox
       - search
-      - git-revision-date-localized:
-          type: iso_date
-          enable_creation_date: false
-          exclude:
-            - index.md 
-            - waline.md
-      # - git-authors:
-      #     exclude:
-      #       - index.md
       - blog:
-          post_date_format: full #时间
+          post_date_format: full
           draft: true
-          draft_if_future_date: true #自动将具有未来日期的帖子标记为草稿
+          draft_if_future_date: true
           post_readtime: true
-          post_readtime_words_per_minute: 265  #计算帖子的阅读时间时读者每分钟预计阅读的字数
+          post_readtime_words_per_minute: 265
           post_url_format: "{date}/{slug}"
-          categories_slugify: !!python/object/apply:pymdownx.slugs.slugify
-            kwds:
-              case: lower
-          # categories_toc: true
-          # pagination_per_page: 5
           pagination_url_format: "page/{page}"
-          authors_file: "{blog}/.authors.yml"  #作者信息
-      - tags:
-          tags_file: tag.md  #分类标签
+          authors_file: "{blog}/.authors.yml"
+          
 
     markdown_extensions:
       - abbr
