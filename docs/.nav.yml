@@ -1,0 +1,11 @@
+# [Navigtion]
+nav: #目录
+  - Home: index.md
+  - 博客: blog
+  - 计算机研究员: researcher
+  - 语言雕琢师: writer
+  - 证书印刷员: certificate
+  - Tags: tags.md
+  - 杂谈: rant
+  - Archive: archive.md
+  - About: about.md

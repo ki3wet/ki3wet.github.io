@@ -5,37 +5,49 @@
     #[UI]
     theme:
       name: material
-      # custom_dir: docs/overrides
+      custom_dir: docs/overrides
       # custom_dir: material/.overrides
       # font:
       #   text: Bitter
       #   code: Roboto Mono
-      logo: https://cn.mcecy.com/image/20231006/a05f708fb7b0426e7a5786669d5b1386.png
+      logo: https://img.picui.cn/free/2025/07/04/686761678314b.png
         # material/library
         # admonition:
         #   <type>: material/file-alert-outline
-
       favicon: img/wkw2.png
       # img/11.ico
       palette:
-        #primary: blue grey
-        
         - media: "(prefers-color-scheme: light)"
           scheme: default # 日间模式
           primary: blue grey # 上方的
-          accent: indigo # 链接等可交互元件的高亮色
-          # teal 
+          accent: blue # 链接等可交互元件的高亮色
+          # teal
           toggle:
-            icon: material/toggle-switch # 图标
+            icon: material/brightness-7 # 图标
             name: 切换至夜间模式 # 鼠标悬浮提示
         - media: "(prefers-color-scheme: dark)"
           scheme: slate # 夜间模式
-          primary: black 
+          primary: black
           accent: indigo
           # teal
           toggle:
-            icon: material/toggle-switch-off-outline
-            name: 切换至日间模式
+            icon: material/brightness-4
+            name: 切换至日间模式 
+      icon:
+        admonition:
+          note: octicons/tag-16
+          abstract: octicons/checklist-16
+          info: octicons/info-16
+          tip: octicons/squirrel-16
+          success: octicons/check-16
+          question: octicons/question-16
+          warning: octicons/alert-16
+          failure: octicons/x-circle-16
+          danger: octicons/zap-16
+          bug: octicons/bug-16
+          example: octicons/beaker-16
+          quote: octicons/quote-16
+
       features: 
         - announce.dismiss #呈现可标记为由用户读取的临时公告，可以包含一个用于取消当前公告的按钮
         # - navigation.instant 
@@ -59,18 +71,17 @@
         - content.code.annotate 
       language: zh # 一些提示性的文字会变成中文
       
-
       icon:
         repo: fontawesome/brands/github #右上角图标
+        theme:
+
     edit_uri: edit/main/docs # 编辑按钮跳转的链接 
     repo_url: https://github.com/ki3wet/ki3wet.github.io # 右上角点击跳转的链接
     repo_name: ki3wet.github.io # 右上角的名字
 
-    # [Navigtion]
-    nav: #目录
       
     copyright: Copyright &copy; 2024~2025 ki3wet/All Rights Reserved. # 左下角的版权声明
-      
+
 
     extra:
       # tags:
@@ -103,6 +114,7 @@
         
     plugins:
       - search
+      - awesome-nav
       - blog:
           post_date_format: full
           draft: true
@@ -112,7 +124,10 @@
           post_url_format: "{date}/{slug}"
           pagination_url_format: "page/{page}"
           authors_file: "{blog}/.authors.yml"
-          
+      
+    watch:
+      - includes
+      - src
 
     markdown_extensions:
       - abbr
@@ -122,6 +137,8 @@
       - footnotes
       - md_in_html
       - meta # 支持Markdown文件上方自定义标题标签等
+      - pymdownx.arithmatex:
+          generic: true
       - pymdownx.caret
       - pymdownx.betterem
       - pymdownx.critic
@@ -129,7 +146,9 @@
       - pymdownx.inlinehilite
       - pymdownx.keys
       - pymdownx.mark
-      - pymdownx.snippets
+      - pymdownx.snippets:
+          auto_append:
+            - includes/abbreviations.md
       - pymdownx.smartsymbols
       - pymdownx.tilde
       - pymdownx.superfences:
@@ -137,8 +156,6 @@
             - name: mermaid
               class: mermaid
               format: !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
-      - pymdownx.arithmatex:  # latex支持
-          generic: true
       - toc:
           permalink: true # 固定标题位置为当前位置
       - pymdownx.highlight: # 代码块高亮
@@ -148,6 +165,9 @@
       - pymdownx.emoji:
           emoji_index: !!python/name:material.extensions.emoji.twemoji
           emoji_generator: !!python/name:material.extensions.emoji.to_svg
+          options:
+            custom_icons:
+              - overrides/.icons
       - pymdownx.tabbed:
           alternate_style: true
       - pymdownx.tasklist:
@@ -157,31 +177,32 @@
           permalink: "\ue157"
       
     extra_javascript:
-      - javascripts/extra.js 
-      # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
-      - javascripts/mathjax.js
-      - https://polyfill.io/v3/polyfill.min.js?features=es6
-      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-      # - javascripts/mathjax-config.js
-      # - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML
 
-      - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js
-      - ckplayer/js/ckplayer.js
-      # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js
-      # - javascripts/backbound1.js
-      # - javascripts/rellax.min.js
-      - https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js
-      # - https://res.zvo.cn/translate/translate.js  # Translate
+      - javascripts/extra.js #自定义javascript
+      - javascripts/mathjax.js #Latex支持
+      - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js #Latex支持
+      - https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js #忘了
+      - https://unpkg.com/katex@0/dist/katex.min.js
+      - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+      - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+      - https://polyfill.io/v3/polyfill.min.js?features=es6 #Latex支持
+      # - ckplayer/js/ckplayer.js #播放器配置
+      # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js  #gitalk支持
+      
 
     extra_css:
-      - stylesheets/extra.css
-      - stylesheets/link.css
-      # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/extra.css # extra.css的CDN
-      # - stylesheets/extra1.css
-      # - stylesheets/video.css
-      # - https://unpkg.com/@waline/client@v2/dist/waline.css
-      - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css #评论
-      - ckplayer/css/ckplayer.css
-      - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css
-      # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css
-      - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css  #字体
+      - stylesheets/extra.css # 自定义CSS
+      - https://unpkg.com/katex@0/dist/katex.min.css
+      # - stylesheets/link.css #友链配置
+      # - stylesheets/customize.css # 搜索圆角优化
+      # - assets/stylesheets/portfolio.css
+      # - stylesheets/video.css #播放器可选配置
+      # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css #gitalk支持
+      # - ckplayer/css/ckplayer.css   #播放器配置
+      # - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css # font-awesome表情支持
+      # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css  #分享支持
+      - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css #字体
+      # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css #字体
+      # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css  #字体
+      # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css  #字体
