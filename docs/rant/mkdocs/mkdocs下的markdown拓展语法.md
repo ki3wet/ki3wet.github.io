@@ -4,6 +4,8 @@ tags: "DocWriting"
 
 # 0x01 mkdocs下的markdown拓展语法
 
+摘录自：[Admonitions - Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+
 ## Admonitions
 
 ### Usage
@@ -589,7 +591,7 @@ tags on separate lines and adding new lines between the tags and the content.
 	
 	:	Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. 
 		Proin ut eros sed sapien ullamcorper consequat. Nunc ligula ante.
-
+	
 		Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis. 
 		Nam vulputate tincidunt fringilla. Nullam dignissim ultrices urna non auctor.
 	
@@ -606,7 +608,7 @@ tags on separate lines and adding new lines between the tags and the content.
 	:	Aliquam metus eros, 
 	
 	</div>
-	
+
 ### using task lists
 === "Task Lists"
     ```markdown title="TaskList"
@@ -620,13 +622,13 @@ tags on separate lines and adding new lines between the tags and the content.
 	
 	<div class="result" markdown>
 	
-    - [x] Lorem ipsum dolor sit amet,consectetur adipiscing elit
-    - [ ] Vestibulum convallis sit amet nisi a tincidunt
-    * [x] In hac habitasse platea dictumst
-    * [x] In scelerisque nibh non dolor mollis congue sed et metus
-    * [ ] Praesent sed risus massa
-    - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
-     	
+	- [x] Lorem ipsum dolor sit amet,consectetur adipiscing elit
+	- [ ] Vestibulum convallis sit amet nisi a tincidunt
+	* [x] In hac habitasse platea dictumst
+	* [x] In scelerisque nibh non dolor mollis congue sed et metus
+	* [ ] Praesent sed risus massa
+	- [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+	 	
 	</div>
 
 ## Math
@@ -646,7 +648,7 @@ tags on separate lines and adding new lines between the tags and the content.
 	$$
 	
 	</div>
-	
+
 #### Using inline block syntax
 === "inline syntax"
 	```markdown
@@ -675,7 +677,7 @@ tags on separate lines and adding new lines between the tags and the content.
 	[Hover me](https://example.com "I'm a tooltip")
 	
 	</div>
-	
+
 #### with title
 
 === "Lnk with tooltip, reference syntax"
@@ -688,7 +690,7 @@ tags on separate lines and adding new lines between the tags and the content.
 	
 	:material-information-outline:{ title="Important information" }
 	</div>
-	
+
 #### Adding abbreviations
 
 

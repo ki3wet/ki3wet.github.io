@@ -124,7 +124,9 @@
           post_url_format: "{date}/{slug}"
           pagination_url_format: "page/{page}"
           authors_file: "{blog}/.authors.yml"
-      
+      - mkdocstrings
+      - autorefs
+
     watch:
       - includes
       - src
