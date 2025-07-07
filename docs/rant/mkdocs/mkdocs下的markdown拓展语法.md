@@ -62,6 +62,12 @@ Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
     text__, images, ... basically anything that can be expressed in Markdown.
 ```
 
+Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+{ .annotate }
+
+1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
+    text__, images, ... basically anything that can be expressed in Markdown.
+
 > 1. allow nested inside annotations
 
 ## Content tabs
@@ -107,6 +113,8 @@ in some situation, the Attribue LIst don't work.That can use Markdown in Html.
 ``` markdown
 [Subscribe to our newsletter](#){ .md-button}
 ```
+
+[Subscribe to our newsletter](#){ .md-button}
 
 > display a filled, primary button `.md-button--primary`
 
@@ -185,7 +193,9 @@ The `#!python range()` function is used to generate a sequence of numbers.
 
 ````markdown
 ``` title=".browserslistrc"
---8<-- ".browserslistrc"
+
+	`--8<-- ".browserslistrc"`
+	
 ```
 ````
 
